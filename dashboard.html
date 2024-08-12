@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img src="logo.png" alt="">
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">About</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Contact</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="login.html">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                    
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Temprature</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="sunny"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Humidity</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="water"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">ph</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="thermometer"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">$7,842</div>
+                        <div class="cardName">Rainfall</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="rainy"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>N</td>
+                                <td>P</td>
+                                <td>K</td>
+                                <td>Temprature</td>
+                                <td>Humidity</td>
+                                <td>Ph</td>
+                                <td>Rainfall</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>90</td>
+                                <td>42</td>
+                                <td>43</td>
+                                <td>20.87974</td>
+                                <td>82.00274</td>
+                                <td>6.502985</td>
+                                <td>202.9355</td>
+                            </tr>
+
+                            <tr>
+                                <td>90</td>
+                                <td>42</td>
+                                <td>43</td>
+                                <td>20.87974</td>
+                                <td>82.00274</td>
+                                <td>6.502985</td>
+                                <td>202.9355</td>
+                            </tr>
+                            </tr>
+
+                            <tr>
+                                <td>90</td>
+                                <td>42</td>
+                                <td>43</td>
+                                <td>20.87974</td>
+                                <td>82.00274</td>
+                                <td>6.502985</td>
+                                <td>202.9355</td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- ================= Button ================ -->
+                <div class="buttonContainer">
+                    <button id="dashboardButton" class="custom-button">Prediction</button>
+                    <div id="predictionBox" class="prediction-box">
+                        <!-- Prediction values will be displayed here -->
+                    </div>
+                </div>
+            </div>
+            
+
+            
+          
+        </div>
+
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="dashboard.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        document.getElementById("dashboardButton").addEventListener("click", function() {
+            // Sample prediction values
+            const predictionValues = {
+                N: 95,
+                P: 40,
+                K: 45,
+                Temperature: 21.5,
+                Humidity: 80.3,
+                Ph: 6.8,
+                Rainfall: 210.4
+            };
+
+            // Display the prediction values in the predictionBox
+            const predictionBox = document.getElementById("predictionBox");
+            predictionBox.innerHTML = `
+                <p><strong>N:</strong> ${predictionValues.N}</p>
+                <p><strong>P:</strong> ${predictionValues.P}</p>
+                <p><strong>K:</strong> ${predictionValues.K}</p>
+                <p><strong>Temperature:</strong> ${predictionValues.Temperature}</p>
+                <p><strong>Humidity:</strong> ${predictionValues.Humidity}</p>
+                <p><strong>Ph:</strong> ${predictionValues.Ph}</p>
+                <p><strong>Rainfall:</strong> ${predictionValues.Rainfall}</p>
+            `;
+        });
+    </script>
+</body>
+
+</html>
